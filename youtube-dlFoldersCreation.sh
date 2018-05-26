@@ -18,6 +18,9 @@
 #	The root url will be saved on the pwd where script executed
 # 	The oneurl and seconurl on pwd/macarena
 #	The thirdurl on pwd/blahblah
+#
+# 	For youtube play list
+# 	If your playlist isn't working and the URL contains a v=<ID> element, remove it so there's just the ?list=... item in the querystring.
 
 SAVELOG=true
 LOGNAME="downloadlog.log"
@@ -41,7 +44,6 @@ function download {
 	echo "YOUTUBE-DL COMMAND EXECUTED:	 	$COMMAND"
 	#Download 
 	eval $COMMAND
-	some_command
 	if [ $? -eq 0 ]; then
 		echo "DOWNLOAD SUCCESS "
 	 	TOTALDOWNLOADED=$((TOTALDOWNLOADED+1))
@@ -125,4 +127,3 @@ else
 	readFileWords $1
 fi
  
-
